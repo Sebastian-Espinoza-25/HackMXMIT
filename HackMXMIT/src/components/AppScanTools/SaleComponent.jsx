@@ -83,6 +83,17 @@ const SaleComponent = () => {
 
     return (
         <div className="chatContainer">
+            <div className="inputContainer">
+            {productData && (
+                <div className="productData">
+                    <p>GTIN: {productData.GTIN}</p>
+                    <p>Marca: {productData.brand}</p>
+                    <p>Descripción: {productData.product_description}</p>
+                    <p>Nombre: {productData.product_name}</p>
+                    <p>Volumen: {productData.volume}</p>
+                </div>
+            )}
+            </div>
             <div className="chatBox">
                 {messages.map((msg, index) => (
                     <div
@@ -103,17 +114,8 @@ const SaleComponent = () => {
                 />
                 <button onClick={handleSend} className="sendButton">Enviar</button>
                 <button onClick={handleComplete} className="sendButton">Completar</button>
+                <button onClick={handleProcessGtin} className='sendButton'>Info</button>
             </div>
-            <button onClick={handleProcessGtin} className='sendButton'>Procesar GTIN</button>
-            {productData && (
-                <div className="productData">
-                    <p>GTIN: {productData.GTIN}</p>
-                    <p>Marca: {productData.brand}</p>
-                    <p>Descripción: {productData.product_description}</p>
-                    <p>Nombre: {productData.product_name}</p>
-                    <p>Volumen: {productData.volume}</p>
-                </div>
-            )}
         </div>
     );
 };
