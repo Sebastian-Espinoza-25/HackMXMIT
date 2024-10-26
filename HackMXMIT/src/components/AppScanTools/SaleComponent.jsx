@@ -5,7 +5,7 @@ const SaleComponent = () => {
     const [gtinMessages, setGtinMessages] = useState([]);
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([
-        { text: "Bienvenid@" }
+        { text: "Bienvenid@", type: "bot" },
     ]);
     const [productData, setProductData] = useState([]);
 
@@ -14,7 +14,7 @@ const SaleComponent = () => {
         if (input.trim() === "") return;
 
         // Agregar mensaje del usuario al chat
-        const userMessage = { text: input };
+        const userMessage = { text: input, type: "user" };
         setMessages((prevMessages) => [...prevMessages, userMessage]);
 
         // Imprimir en consola lo que se envía al POST
@@ -32,11 +32,11 @@ const SaleComponent = () => {
 
             const data = await response.json();
             // Agregar respuesta del backend al chat
-            const botMessage = { text: data.respuesta };
+            const botMessage = { text: data.respuesta, type: "bot" };
             setMessages((prevMessages) => [...prevMessages, botMessage]);
         } catch (error) {
             console.error("Error al enviar el comando:", error);
-            const errorMessage = { text: "Error al comunicarse con el servidor." };
+            const errorMessage = { text: "Error al comunicarse con el servidor.", type: "bot" };
             setMessages((prevMessages) => [...prevMessages, errorMessage]);
         }
 
@@ -70,12 +70,12 @@ const SaleComponent = () => {
                 });
 
                 const data = await response.json();
-                const botMessage = { text: data.product_data };
+                const botMessage = { text: data.product_data, type: "bot" };
                 setGtinMessages((prevMessages) => [...prevMessages, botMessage]);
                 setProductData(data.product_data);
             } catch (error) {
                 console.error("Error al procesar el GTIN:", error);
-                const errorMessage = { text: "Error al comunicarse con el servidor." };
+                const errorMessage = { text: "Error al comunicarse con el servidor.", type: "bot" };
                 setGtinMessages((prevMessages) => [...prevMessages, errorMessage]);
             }
         }
