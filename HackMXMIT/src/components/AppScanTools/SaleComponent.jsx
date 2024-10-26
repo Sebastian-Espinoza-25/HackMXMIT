@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import './SaleComponent.css'; // Importa el archivo CSS
 
 const SaleComponent = () => {
+    const [gtinMessages, setGtinMessages] = useState([]);
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([
         { text: "Bienvenid@" }
     ]);
+    const [productData, setProductData] = useState([]);
 
     // Función para enviar comandos al backend y actualizar el "chat"
     const handleSend = async () => {
@@ -54,6 +56,31 @@ const SaleComponent = () => {
         }
     };
 
+    // genera una api para enviar detectedCode a esta ruta @app.route('/process-gtin', methods=['POST'])
+    const handleProcessGtin = async () => {
+        const detectedCode = localStorage.getItem("detectedCode");
+        if (detectedCode) {
+            try {
+                const response = await fetch('http://localhost:5000/process-gtin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ GTIN: detectedCode })
+                });
+
+                const data = await response.json();
+                const botMessage = { text: data.product_data };
+                setGtinMessages((prevMessages) => [...prevMessages, botMessage]);
+                setProductData(data.product_data);
+            } catch (error) {
+                console.error("Error al procesar el GTIN:", error);
+                const errorMessage = { text: "Error al comunicarse con el servidor." };
+                setGtinMessages((prevMessages) => [...prevMessages, errorMessage]);
+            }
+        }
+    }
+
     return (
         <div className="chatContainer">
             <div className="chatBox">
@@ -77,6 +104,16 @@ const SaleComponent = () => {
                 <button onClick={handleSend} className="sendButton">Enviar</button>
                 <button onClick={handleComplete} className="sendButton">Completar</button>
             </div>
+            <button onClick={handleProcessGtin} className='sendButton'>Procesar GTIN</button>
+            {productData && (
+                <div className="productData">
+                    <p>GTIN: {productData.GTIN}</p>
+                    <p>Marca: {productData.brand}</p>
+                    <p>Descripción: {productData.product_description}</p>
+                    <p>Nombre: {productData.product_name}</p>
+                    <p>Volumen: {productData.volume}</p>
+                </div>
+            )}
         </div>
     );
 };
