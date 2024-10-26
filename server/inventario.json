@@ -1,0 +1,32 @@
+{
+    "22": {
+        "nombre": "salsa",
+        "precio": 120,
+        "cantidad": 5
+    },
+    "777": {
+        "nombre": "Queso",
+        "precio": 100,
+        "cantidad": 98
+    },
+    "7501234567890": {
+        "nombre": "Coca Cola 3lts",
+        "precio": 45,
+        "cantidad": 14
+    },
+    "7500987654321": {
+        "nombre": "Del Valle Mango 1lt",
+        "precio": 20,
+        "cantidad": 15
+    },
+    "undefined": {
+        "nombre": "7502271911472",
+        "precio": 19,
+        "cantidad": 90
+    },
+    "7501000630363": {
+        "nombre": "Mamut",
+        "precio": 10,
+        "cantidad": 11
+    }
+}

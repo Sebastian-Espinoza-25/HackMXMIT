@@ -1,0 +1,83 @@
+/* Contenedor de la tabla */
+.InventoryTableContainer {
+    padding: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo de título */
+.InventoryTableContainer h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Campo de búsqueda */
+.SearchInput {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.SearchInput:focus {
+    outline: none;
+    border-color: #4ca0af;
+}
+
+/* Tabla */
+.InventoryTable {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Encabezados de la tabla */
+.InventoryTable th {
+    background-color: #4ca0af;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Filas de la tabla */
+.InventoryTable td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Filas alternas */
+.InventoryTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Mensaje de 'No se encontraron productos' */
+.NoResults {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+/* Botones de acciones */
+.editButton, .deleteButton {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+

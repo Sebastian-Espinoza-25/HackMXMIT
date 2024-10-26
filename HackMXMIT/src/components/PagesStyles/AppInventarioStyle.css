@@ -1,0 +1,47 @@
+/* Hace que el fondo del contenedor cubra toda la pantalla */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.AppInventarioContainer {
+    min-height: 100vh; /* Ajusta la altura para que cubra todo el viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #a3a0a0, #ffffff); /* Fondo de gradiente */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.HeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.HeaderContainer h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.HeaderContainer button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4ca0af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.HeaderContainer button:hover {
+    background-color: #3b7f8b;
+}

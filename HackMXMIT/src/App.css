@@ -1,0 +1,78 @@
+/* Elimina márgenes y padding del body y html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal si es necesario */
+}
+
+/* Contenedor Principal con fondo de gradiente */
+.DashboardContainer {
+  background: linear-gradient(to bottom, #a3a0a0, #ffffff); /* Gradiente de gris a blanco */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Título en la esquina superior */
+.DashboardTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de botones como tarjetas en 3 columnas */
+.ButtonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 80%;
+  height: 70%; /* Ocupa el espacio restante debajo del título */
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Tarjetas del Dashboard con gradiente */
+.DashboardCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #66cc8a, #58a4b0); /* Gradiente de colores en armonía */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
+  text-align: center;
+  height: 100%; /* Ocupa toda la altura disponible en el contenedor */
+}
+
+.DashboardCard h2 {
+  margin-top: 10px;
+}
+
+.DashboardCard:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #58a4b0, #66cc8a); /* Cambia el gradiente al pasar el mouse */
+}
+
+.DashboardCard:active {
+  background: #4a8b8e; /* Color sólido al hacer clic */
+}
+
+/* Apilar tarjetas y ocultar título en pantallas pequeñas */
+@media (max-width: 768px) {
+  .ButtonContainer {
+      grid-template-columns: 1fr;
+  }
+}

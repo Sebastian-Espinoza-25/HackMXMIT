@@ -1,0 +1,84 @@
+/* Fondo con gradiente solo para el componente de inicio de sesión */
+.LoginBackground {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #a3a0a0, #ffffff);
+}
+
+/* Estilo del título principal */
+.MainTitle {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Contenedor principal del formulario sin fondo blanco */
+.LoginFormContainer {
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Estilo del título del formulario */
+.LoginFormContainer h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Mensaje de error */
+.error {
+    color: #d9534f;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Estilo de los labels */
+.LoginFormContainer label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* Estilo de los inputs */
+.LoginFormContainer input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.LoginFormContainer input:focus {
+    outline: none;
+    border-color: #4ca0af;
+}
+
+/* Estilo del botón de envío */
+.LoginFormContainer button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #4ca0af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.LoginFormContainer button:hover {
+    background-color: #3b7f8b;
+}
