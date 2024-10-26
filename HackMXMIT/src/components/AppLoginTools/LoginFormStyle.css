@@ -1,84 +1,106 @@
-/* Fondo con gradiente solo para el componente de inicio de sesión */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bellefair&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* Fondo con gradiente degradado y elegante para el componente de inicio de sesión */
 .LoginBackground {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #a3a0a0, #ffffff);
+    background: linear-gradient(135deg, #d9e4f5, #f8f9fd);
+    padding: 20px;
 }
 
-/* Estilo del título principal */
+/* Estilo del título principal con fuente moderna y ligera */
 .MainTitle {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
+    font-size: 2.8rem;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-family: 'Abril Fatface', sans-serif;
 }
 
-/* Contenedor principal del formulario sin fondo blanco */
+/* Contenedor principal del formulario con sombras suaves y sin borde visible */
 .LoginFormContainer {
     max-width: 400px;
-    padding: 2rem;
+    width: 100%;
+    padding: 2.5rem;
     text-align: center;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.LoginFormContainer:hover {
+    transform: translateY(-3px);
 }
 
 /* Estilo del título del formulario */
 .LoginFormContainer h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 1.8rem;
+    font-weight: 600;
 }
 
 /* Mensaje de error */
 .error {
-    color: #d9534f;
+    color: #e53e3e;
     margin-bottom: 1rem;
     font-weight: bold;
+    font-size: 0.9rem;
+    text-align: left;
 }
 
 /* Estilo de los labels */
 .LoginFormContainer label {
     display: block;
-    font-weight: bold;
-    color: #333;
+    font-weight: 600;
+    color: #4a5568;
     margin-bottom: 0.5rem;
     text-align: left;
+    font-size: 0.9rem;
 }
 
-/* Estilo de los inputs */
+/* Estilo de los inputs con bordes suaves */
 .LoginFormContainer input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+    color: #2d3748;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .LoginFormContainer input:focus {
     outline: none;
     border-color: #4ca0af;
+    box-shadow: 0 0 8px rgba(76, 160, 175, 0.2);
 }
 
-/* Estilo del botón de envío */
+/* Estilo del botón de envío con gradiente suave y transición */
 .LoginFormContainer button {
     width: 100%;
     padding: 12px;
-    font-size: 1rem;
-    background-color: #4ca0af;
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #4ca0af, #62b5c0);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .LoginFormContainer button:hover {
-    background-color: #3b7f8b;
+    background: linear-gradient(to right, #3b7f8b, #4ca0af);
+    transform: translateY(-2px);
+}
+
+.LoginFormContainer button:active {
+    transform: translateY(0px);
 }

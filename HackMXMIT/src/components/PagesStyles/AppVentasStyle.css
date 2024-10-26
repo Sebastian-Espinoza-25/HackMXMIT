@@ -1,6 +1,6 @@
 /* Contenedor principal de la página de ventas */
 .AppVentasContainer {
-    background: linear-gradient(to bottom, #a3a0a0, #ffffff);
+    background: linear-gradient(to bottom, #f0f4f8, #ffffff); /* Fondo de gradiente claro */
     min-height: 100vh;
     padding: 20px;
     display: flex;
@@ -17,24 +17,31 @@
     width: 100%;
     max-width: 1100px;
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .HeaderContainer h1 {
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.2rem;
+    color: #2d3748;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Botón de navegación en el encabezado */
 .HeaderContainer button {
-    padding: 10px 20px;
+    padding: 10px 24px;
     font-size: 1rem;
-    background-color: #4ca0af;
+    background-color: #5ab4f0;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .HeaderContainer button:hover {
-    background-color: #3b7f8b;
+    background-color: #3992b1; /* Azul más oscuro en hover */
+    transform: scale(1.05);
 }

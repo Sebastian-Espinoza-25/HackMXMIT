@@ -11,11 +11,12 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to bottom, #a3a0a0, #ffffff); /* Fondo de gradiente */
+    background: linear-gradient(to bottom, #f0f4f8, #ffffff); /* Fondo de gradiente claro */
     padding: 20px;
     box-sizing: border-box;
 }
 
+/* Encabezado del contenedor con ajustes de espacio */
 .HeaderContainer {
     display: flex;
     justify-content: space-between;
@@ -27,21 +28,27 @@ body, html {
 }
 
 .HeaderContainer h1 {
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.2rem;
+    color: #2d3748;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Botón en el encabezado */
 .HeaderContainer button {
-    padding: 10px 20px;
+    padding: 10px 24px;
     font-size: 1rem;
-    background-color: #4ca0af;
+    background-color: #5ab4f0;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .HeaderContainer button:hover {
-    background-color: #3b7f8b;
+    background-color: #3992b1; /* Azul más oscuro en hover */
+    transform: scale(1.05);
 }

@@ -5,58 +5,79 @@
     height: 400px;
     width: 100%;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 15px; /* Espaciado extra */
+    background-color: #f0f4f8; /* Fondo en tono suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-sizing: border-box;
 }
 
 .chatBox {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 10px;
+    background-color: #ffffff;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra interna */
 }
 
 .botMessage {
-    background-color: #e0e0e0;
+    background-color: #e8eaf6;
     padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 5px;
+    border-radius: 12px;
+    margin-bottom: 8px;
     align-self: flex-start;
     max-width: 80%;
+    color: #333; /* Texto oscuro */
+    font-size: 0.95rem; /* Tamaño de fuente ajustado */
 }
 
 .userMessage {
-    background-color: #4CAF50;
+    background-color: #5ab4f0;
     color: white;
     padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 5px;
+    border-radius: 12px;
+    margin-bottom: 8px;
     align-self: flex-end;
     max-width: 80%;
+    font-size: 0.95rem; /* Tamaño de fuente ajustado */
 }
 
+/* Contenedor de input y botón */
 .inputContainer {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px; /* Ajusta el espacio vertical */
+    gap: 12px;
+    margin-top: 10px;
 }
 
 .input {
     flex: 1;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     border: 1px solid #ddd;
+    background-color: #f9f9f9; /* Fondo gris claro */
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #5ab4f0; /* Color de enfoque */
 }
 
 .chatContainer .sendButton {
-    padding: 10px 20px !important;
-    border-radius: 5px !important;
-    border: none !important;
-    background-color: #022e03 !important;
-    color: white !important;
-    cursor: pointer !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    background-color: #022e03;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.chatContainer .sendButton:hover {
+    background-color: #016f01; /* Verde oscuro en hover */
+    transform: scale(1.05);
 }
